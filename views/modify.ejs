@@ -1,0 +1,18 @@
+<%- include('partials/header.ejs') %>
+<form method="post" action="">
+    <fieldset disabled>
+      <legend>NOTE MODIFICATION</legend>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">cant modify note title</label>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= post[0].title %>">
+      </div>
+    </fieldset>
+    <div class="form-group">
+        <label>Note Content</label>
+        <textarea class="form-control" name="modifiedContent" rows="10">
+            <%= post[0].content %> 
+        </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">save</button>
+</form>
+<%- include('partials/footer.ejs') %>  

@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs') %>
+<br>
+<% posts.forEach(function(element) {%>
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= element.title %></h5>
+      <p class="card-text">
+          <%if(element.content.length>250){%>
+        <%=element.content.substring(0,250);%> ...
+         <%}else{%>
+           <%= element.content %> 
+          <%}%></p>
+      <a href="/posts/<%=element.title%>" class="btn btn-primary">EXPAND</a>
+    </div>
+    <div class="card-footer text-muted">
+            time:
+        <%= ""+element.time.hours+":"+element.time.minutes %>   
+        date:
+        <%= ""+element.date.day+"-"+element.date.month+"-"+element.date.year %>
+    </div>
+</div>
+<br>
+<%});%>
+<%- include('partials/footer.ejs') %> 

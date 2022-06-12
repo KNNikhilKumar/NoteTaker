@@ -1,0 +1,12 @@
+<%- include('partials/header.ejs') %>
+<h1><%= post[0].title %></h1>
+<p><%= post[0].content %></p>
+<table>
+    <tr>
+        <td><a href="/posts/modify/<%= post[0].title %> "><button type="button" class="btn btn-secondary" name="modify">Modify</button></a></td>
+        <td><form action="" method="post">
+            <button type="submit" class="btn btn-danger" name="delete">Delete</button>
+        </form></td>
+    </tr>
+</table>
+<%- include('partials/footer.ejs') %> 

@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %> 
+<h1>LIST OF NOTES</h1>
+<br>
+<br>
+<% posts.forEach(function(element) {%>
+    <br>
+    <h2><%= element.title %></h2>
+    <p><%if(element.content.length>250){%>
+        <%=element.content.substring(0,250);%> ...
+    <%}else{%>
+        <%= element.content %> 
+    <%}%>
+    <a href="/posts/<%=element.title%> ">EXPAND</a>
+    </p>
+    <p class="text-muted">
+        time:
+    <%= ""+element.time.hours+":"+element.time.minutes %>   
+    date:
+    <%= ""+element.date.day+"-"+element.date.month+"-"+element.date.year %>
+    <br>
+    </p>
+    
+    <br>
+    <hr>
+<%}) %>
+<%- include("partials/footer.ejs") %> 
